@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Vendas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #052659;
+      color: white;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-btn {
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: -250px;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #021024;
+      color: white;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 15px 0;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding: 20px;
+      gap: 15px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .search-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-bar button {
+      background-color: #5483B3;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <h1>Loja Ninja</h1>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <h2>Menu</h2>
+    <a href="#">Perfil</a>
+    <a href="#">Produtos</a>
+    <a href="index.html">Sair</a>
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="/images/produto1.webp" alt="Produto 1">
+      <h3>Camisa Ninja</h3>
+      <p>R$ 49,99</p>
+    </div>
+    <div class="product">
+      <img src="/images/produto2.webp" alt="Produto 2">
+      <h3>Caneca Chakra</h3>
+      <p>R$ 29,99</p>
+    </div>
+    <div class="product">
+      <img src="/images/produto3.webp" alt="Produto 3">
+      <h3>Espada Shinobi</h3>
+      <p>R$ 129,99</p>
+    </div>
+    <div class="product">
+      <img src="/images/produto4.jpg" alt="Produto 4">
+      <h3>Manto de Aura</h3>
+      <p>R$ 299,99</p>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Pesquisar produto...">
+    <button>🔍</button>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
